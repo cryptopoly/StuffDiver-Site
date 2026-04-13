@@ -6,6 +6,7 @@
   <title>Stuff Diver — Dive Deep Into Your Disk Space</title>
   <meta name="description" content="Interactive disk space visualiser with treemap, rings, bubbles, duplicate finder, and smart cleanup. Free for macOS, Windows, and Linux.">
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="862c30b8-f912-4ad8-b7b3-9f74ac9d1718"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,24 +30,46 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg">
-      <div class="hero-grid">
-        <div class="grid-block" style="--c:#34d399;--d:0.2s;grid-area:1/1/3/3"></div>
-        <div class="grid-block" style="--c:#60a5fa;--d:0.5s;grid-area:1/3/2/5"></div>
-        <div class="grid-block" style="--c:#f87171;--d:0.8s;grid-area:2/3/3/4"></div>
-        <div class="grid-block" style="--c:#a78bfa;--d:1.1s;grid-area:2/4/3/5"></div>
-        <div class="grid-block" style="--c:#fbbf24;--d:1.4s;grid-area:3/1/4/2"></div>
-        <div class="grid-block" style="--c:#c084fc;--d:1.7s;grid-area:3/2/4/3"></div>
-        <div class="grid-block" style="--c:#22d3ee;--d:2.0s;grid-area:3/3/4/4"></div>
-        <div class="grid-block" style="--c:#fb7185;--d:2.3s;grid-area:3/4/4/5"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-split">
+      <div class="hero-text">
+        <img src="images/logo-icon.png" alt="" class="hero-mark" width="64" height="64">
+        <h1 class="hero-title">Dive deep into<br>your <span class="hero-gradient">disk space</span></h1>
+        <p class="hero-sub">See where every byte goes with seven interactive visualisations, find duplicates instantly, and reclaim storage with smart cleanup tools.</p>
+        <div class="hero-cta">
+          <a href="#download" class="btn btn-lg" data-download>Download Free</a>
+          <a href="#features" class="btn btn-lg btn-outline">See Features</a>
+        </div>
+        <div class="hero-platforms">macOS &middot; Windows &middot; Linux &middot; Free &amp; open source</div>
       </div>
-    </div>
-    <div class="hero-content">
-      <img src="images/logo-full.png" alt="Stuff Diver" class="hero-logo">
-      <p class="hero-sub">Interactive disk space visualiser with duplicate finder and smart cleanup.<br>Free for macOS, Windows, and Linux.</p>
-      <div class="hero-cta">
-        <a href="#download" class="btn btn-lg" data-download>Download Free</a>
-        <a href="#features" class="btn btn-lg btn-outline">Learn More</a>
+      <div class="hero-visual">
+        <div class="hero-treemap">
+          <div class="tm" style="--c:#34d399;--w:55%;--h:58%;--x:0;--y:0;--d:0.3s"></div>
+          <div class="tm" style="--c:#60a5fa;--w:43%;--h:33%;--x:56%;--y:0;--d:0.5s"></div>
+          <div class="tm" style="--c:#f87171;--w:22%;--h:65%;--x:56%;--y:34%;--d:0.7s"></div>
+          <div class="tm" style="--c:#a78bfa;--w:20%;--h:32%;--x:79%;--y:34%;--d:0.9s"></div>
+          <div class="tm" style="--c:#fbbf24;--w:28%;--h:40%;--x:0;--y:59%;--d:1.1s"></div>
+          <div class="tm" style="--c:#c084fc;--w:26%;--h:40%;--x:29%;--y:59%;--d:1.3s"></div>
+          <div class="tm" style="--c:#22d3ee;--w:20%;--h:32%;--x:79%;--y:67%;--d:1.5s"></div>
+          <div class="tm" style="--c:#fb7185;--w:22%;--h:27%;--x:56%;--y:72%;--d:1.7s"></div>
+        </div>
+        <div class="hero-ring-wrap">
+          <svg class="hero-rings" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#34d399" stroke-width="14" stroke-dasharray="120 446" opacity="0.5"><animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite"/></circle>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#60a5fa" stroke-width="12" stroke-dasharray="90 350" opacity="0.5"><animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="15s" repeatCount="indefinite"/></circle>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#a78bfa" stroke-width="10" stroke-dasharray="70 244" opacity="0.5"><animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="12s" repeatCount="indefinite"/></circle>
+            <circle cx="100" cy="100" r="30" fill="none" stroke="#f87171" stroke-width="8" stroke-dasharray="50 138" opacity="0.5"><animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="10s" repeatCount="indefinite"/></circle>
+          </svg>
+        </div>
+        <div class="hero-badges">
+          <span class="hero-badge badge-rings">Rings</span>
+          <span class="hero-badge badge-treemap">Treemap</span>
+          <span class="hero-badge badge-bubbles">Bubbles</span>
+          <span class="hero-badge badge-pie">Pie Chart</span>
+          <span class="hero-badge badge-timeline">Timeline</span>
+          <span class="hero-badge badge-hist">Histogram</span>
+          <span class="hero-badge badge-table">Table</span>
+        </div>
       </div>
     </div>
   </section>
@@ -95,69 +118,110 @@
   <section id="visualisations" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Seven ways to explore your files</h2>
-      <p class="section-sub">Each visualisation mode reveals different patterns. Colour by age, type, or folder.</p>
-      <div class="views-grid">
-        <div class="view-card">
-          <div class="view-preview view-rings">
-            <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="ring r4"></div>
+      <p class="section-sub">Each visualisation mode reveals different patterns. Click to preview, or sit back and watch.</p>
+      <div class="viz-showcase">
+        <div class="viz-stage">
+          <!-- Rings -->
+          <div class="viz-scene active" data-viz="rings">
+            <svg viewBox="0 0 300 300" class="viz-svg">
+              <circle cx="150" cy="150" r="130" fill="none" stroke="#f87171" stroke-width="18" stroke-dasharray="200 617" opacity="0.6"><animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="18s" repeatCount="indefinite"/></circle>
+              <circle cx="150" cy="150" r="105" fill="none" stroke="#a78bfa" stroke-width="16" stroke-dasharray="180 480" opacity="0.65"><animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="14s" repeatCount="indefinite"/></circle>
+              <circle cx="150" cy="150" r="80" fill="none" stroke="#60a5fa" stroke-width="14" stroke-dasharray="140 362" opacity="0.7"><animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="11s" repeatCount="indefinite"/></circle>
+              <circle cx="150" cy="150" r="55" fill="none" stroke="#34d399" stroke-width="12" stroke-dasharray="100 245" opacity="0.75"><animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="9s" repeatCount="indefinite"/></circle>
+              <circle cx="150" cy="150" r="30" fill="none" stroke="#22d3ee" stroke-width="10" stroke-dasharray="60 128" opacity="0.8"><animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="7s" repeatCount="indefinite"/></circle>
+            </svg>
           </div>
-          <h3>Rings</h3>
-          <p>Concentric rings show folder hierarchy. Inner rings are top-level folders, outer rings drill deeper.</p>
-        </div>
-        <div class="view-card">
-          <div class="view-preview view-treemap">
-            <div class="tm-block" style="--c:#34d399;width:55%;height:60%"></div>
-            <div class="tm-block" style="--c:#f87171;width:43%;height:35%;left:56%"></div>
-            <div class="tm-block" style="--c:#60a5fa;width:22%;height:63%;top:36%;left:56%"></div>
-            <div class="tm-block" style="--c:#a78bfa;width:20%;height:34%;top:36%;left:79%"></div>
-            <div class="tm-block" style="--c:#fbbf24;width:30%;height:38%;top:61%"></div>
-            <div class="tm-block" style="--c:#c084fc;width:24%;height:38%;top:61%;left:31%"></div>
+          <!-- Treemap -->
+          <div class="viz-scene" data-viz="treemap">
+            <div class="viz-tm-wrap">
+              <div class="viz-tm" style="--c:#34d399;left:1%;top:1%;width:54%;height:57%"></div>
+              <div class="viz-tm" style="--c:#60a5fa;left:56%;top:1%;width:43%;height:33%"></div>
+              <div class="viz-tm" style="--c:#f87171;left:56%;top:35%;width:21%;height:23%"></div>
+              <div class="viz-tm" style="--c:#a78bfa;left:78%;top:35%;width:21%;height:23%"></div>
+              <div class="viz-tm" style="--c:#fbbf24;left:1%;top:59%;width:28%;height:40%"></div>
+              <div class="viz-tm" style="--c:#c084fc;left:30%;top:59%;width:25%;height:40%"></div>
+              <div class="viz-tm" style="--c:#fb7185;left:56%;top:59%;width:21%;height:40%"></div>
+              <div class="viz-tm" style="--c:#22d3ee;left:78%;top:59%;width:21%;height:40%"></div>
+            </div>
           </div>
-          <h3>Treemap</h3>
-          <p>Space-filling rectangles sized proportionally. The biggest files and folders are impossible to miss.</p>
-        </div>
-        <div class="view-card">
-          <div class="view-preview view-bubbles">
-            <div class="bub b1"></div><div class="bub b2"></div><div class="bub b3"></div>
-            <div class="bub b4"></div><div class="bub b5"></div><div class="bub b6"></div>
+          <!-- Pie -->
+          <div class="viz-scene" data-viz="pie">
+            <svg viewBox="0 0 300 300" class="viz-svg">
+              <circle cx="150" cy="150" r="120" fill="none" stroke="#34d399" stroke-width="60" stroke-dasharray="264 490" transform="rotate(-90 150 150)" opacity="0.85"/>
+              <circle cx="150" cy="150" r="120" fill="none" stroke="#60a5fa" stroke-width="60" stroke-dasharray="151 490" transform="rotate(100 150 150)" opacity="0.85"/>
+              <circle cx="150" cy="150" r="120" fill="none" stroke="#f87171" stroke-width="60" stroke-dasharray="113 490" transform="rotate(200 150 150)" opacity="0.85"/>
+              <circle cx="150" cy="150" r="120" fill="none" stroke="#fbbf24" stroke-width="60" stroke-dasharray="75 490" transform="rotate(280 150 150)" opacity="0.85"/>
+              <circle cx="150" cy="150" r="120" fill="none" stroke="#a78bfa" stroke-width="60" stroke-dasharray="60 490" transform="rotate(340 150 150)" opacity="0.85"/>
+            </svg>
           </div>
-          <h3>Bubbles</h3>
-          <p>Circle packing with drill-down navigation. Click to dive into subfolders.</p>
-        </div>
-        <div class="view-card">
-          <div class="view-preview view-pie">
-            <div class="pie-circle"></div>
+          <!-- Bubbles -->
+          <div class="viz-scene" data-viz="bubbles">
+            <div class="viz-bub-wrap">
+              <div class="viz-bub" style="--c:#34d399;--s:42%;left:8%;top:12%"></div>
+              <div class="viz-bub" style="--c:#60a5fa;--s:32%;left:52%;top:6%"></div>
+              <div class="viz-bub" style="--c:#fbbf24;--s:24%;left:58%;top:48%"></div>
+              <div class="viz-bub" style="--c:#f87171;--s:18%;left:38%;top:56%"></div>
+              <div class="viz-bub" style="--c:#a78bfa;--s:28%;left:14%;top:58%"></div>
+              <div class="viz-bub" style="--c:#22d3ee;--s:14%;left:82%;top:38%"></div>
+              <div class="viz-bub" style="--c:#c084fc;--s:11%;left:44%;top:82%"></div>
+            </div>
           </div>
-          <h3>Pie Chart</h3>
-          <p>Classic circular breakdown of your top files and folders by size.</p>
-        </div>
-        <div class="view-card">
-          <div class="view-preview view-histogram">
-            <div class="hist-bar" style="--h:20%"></div>
-            <div class="hist-bar" style="--h:45%"></div>
-            <div class="hist-bar" style="--h:80%"></div>
-            <div class="hist-bar" style="--h:100%"></div>
-            <div class="hist-bar" style="--h:65%"></div>
-            <div class="hist-bar" style="--h:40%"></div>
-            <div class="hist-bar" style="--h:25%"></div>
-            <div class="hist-bar" style="--h:15%"></div>
+          <!-- Table -->
+          <div class="viz-scene" data-viz="table">
+            <div class="viz-table-wrap">
+              <div class="viz-tbl-header"><span>Name</span><span>Size</span><span>Modified</span><span>Type</span></div>
+              <div class="viz-tbl-row"><span class="viz-tbl-bar" style="--w:85%;--c:#34d399"></span></div>
+              <div class="viz-tbl-row"><span class="viz-tbl-bar" style="--w:72%;--c:#60a5fa"></span></div>
+              <div class="viz-tbl-row"><span class="viz-tbl-bar" style="--w:58%;--c:#f87171"></span></div>
+              <div class="viz-tbl-row"><span class="viz-tbl-bar" style="--w:45%;--c:#fbbf24"></span></div>
+              <div class="viz-tbl-row"><span class="viz-tbl-bar" style="--w:38%;--c:#a78bfa"></span></div>
+              <div class="viz-tbl-row"><span class="viz-tbl-bar" style="--w:30%;--c:#c084fc"></span></div>
+              <div class="viz-tbl-row"><span class="viz-tbl-bar" style="--w:22%;--c:#22d3ee"></span></div>
+            </div>
           </div>
-          <h3>Histogram</h3>
-          <p>File size distribution across buckets from tiny (0-1 KB) to massive (10+ GB).</p>
-        </div>
-        <div class="view-card">
-          <div class="view-preview view-timeline">
-            <div class="tl-dot" style="--x:10%;--y:30%"></div>
-            <div class="tl-dot" style="--x:25%;--y:50%"></div>
-            <div class="tl-dot" style="--x:40%;--y:20%"></div>
-            <div class="tl-dot" style="--x:55%;--y:60%"></div>
-            <div class="tl-dot" style="--x:70%;--y:35%"></div>
-            <div class="tl-dot" style="--x:85%;--y:45%"></div>
-            <div class="tl-line"></div>
+          <!-- Histogram -->
+          <div class="viz-scene" data-viz="histogram">
+            <div class="viz-hist-wrap">
+              <div class="viz-hist-bar" style="--h:12%"></div>
+              <div class="viz-hist-bar" style="--h:28%"></div>
+              <div class="viz-hist-bar" style="--h:52%"></div>
+              <div class="viz-hist-bar" style="--h:88%"></div>
+              <div class="viz-hist-bar" style="--h:100%"></div>
+              <div class="viz-hist-bar" style="--h:72%"></div>
+              <div class="viz-hist-bar" style="--h:45%"></div>
+              <div class="viz-hist-bar" style="--h:30%"></div>
+              <div class="viz-hist-bar" style="--h:18%"></div>
+            </div>
           </div>
-          <h3>Timeline</h3>
-          <p>Files grouped by modification date, from today to 5+ years ago.</p>
+          <!-- Timeline -->
+          <div class="viz-scene" data-viz="timeline">
+            <div class="viz-tl-wrap">
+              <div class="viz-tl-axis"></div>
+              <div class="viz-tl-point" style="left:8%;bottom:25%;--s:22px;--c:#34d399"></div>
+              <div class="viz-tl-point" style="left:20%;bottom:55%;--s:16px;--c:#60a5fa"></div>
+              <div class="viz-tl-point" style="left:33%;bottom:35%;--s:28px;--c:#f87171"></div>
+              <div class="viz-tl-point" style="left:46%;bottom:70%;--s:14px;--c:#fbbf24"></div>
+              <div class="viz-tl-point" style="left:58%;bottom:42%;--s:20px;--c:#a78bfa"></div>
+              <div class="viz-tl-point" style="left:70%;bottom:60%;--s:18px;--c:#22d3ee"></div>
+              <div class="viz-tl-point" style="left:82%;bottom:30%;--s:24px;--c:#c084fc"></div>
+              <div class="viz-tl-point" style="left:92%;bottom:48%;--s:12px;--c:#fb7185"></div>
+              <div class="viz-tl-label" style="left:5%">Today</div>
+              <div class="viz-tl-label" style="left:30%">This Month</div>
+              <div class="viz-tl-label" style="left:58%">This Year</div>
+              <div class="viz-tl-label" style="left:85%">5y+</div>
+            </div>
+          </div>
         </div>
+        <div class="viz-controls">
+          <button class="viz-pill active" data-target="rings">Rings</button>
+          <button class="viz-pill" data-target="treemap">Treemap</button>
+          <button class="viz-pill" data-target="pie">Pie Chart</button>
+          <button class="viz-pill" data-target="bubbles">Bubbles</button>
+          <button class="viz-pill" data-target="table">Table</button>
+          <button class="viz-pill" data-target="histogram">Histogram</button>
+          <button class="viz-pill" data-target="timeline">Timeline</button>
+        </div>
+        <p class="viz-desc" id="viz-desc">Concentric rings show folder hierarchy at a glance. Inner rings are top-level folders, outer rings drill deeper.</p>
       </div>
     </div>
   </section>
@@ -267,6 +331,37 @@
 
   <script src="download.js"></script>
   <script>
+    // Viz showcase cycling
+    (() => {
+      const descs = {
+        rings: 'Concentric rings show folder hierarchy at a glance. Inner rings are top-level folders, outer rings drill deeper.',
+        treemap: 'Space-filling rectangles sized proportionally. The biggest files and folders are impossible to miss.',
+        pie: 'Classic circular breakdown of your top files and folders by size.',
+        bubbles: 'Interactive circle packing with drill-down navigation. Click to dive into subfolders.',
+        table: 'Sortable file listing with size bars, modification dates, and type indicators.',
+        histogram: 'File size distribution across nine buckets, from tiny (0\u20131 KB) to massive (10+ GB).',
+        timeline: 'Files grouped by modification date \u2014 from today to 5+ years ago.'
+      };
+      const order = ['rings','treemap','pie','bubbles','table','histogram','timeline'];
+      let idx = 0, timer;
+      const pills = document.querySelectorAll('.viz-pill');
+      const scenes = document.querySelectorAll('.viz-scene');
+      const descEl = document.getElementById('viz-desc');
+
+      function show(name) {
+        scenes.forEach(s => s.classList.toggle('active', s.dataset.viz === name));
+        pills.forEach(p => p.classList.toggle('active', p.dataset.target === name));
+        if (descEl) descEl.textContent = descs[name] || '';
+        idx = order.indexOf(name);
+      }
+      function next() { idx = (idx + 1) % order.length; show(order[idx]); }
+      function startTimer() { timer = setInterval(next, 4000); }
+      function resetTimer() { clearInterval(timer); startTimer(); }
+
+      pills.forEach(p => p.addEventListener('click', () => { show(p.dataset.target); resetTimer(); }));
+      startTimer();
+    })();
+
     // Mobile nav toggle
     document.querySelector('.nav-toggle').addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('open');
