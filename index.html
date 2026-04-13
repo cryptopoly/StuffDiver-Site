@@ -45,7 +45,7 @@
       <img src="images/logo-full.png" alt="Stuff Diver" class="hero-logo">
       <p class="hero-sub">Interactive disk space visualiser with duplicate finder and smart cleanup.<br>Free for macOS, Windows, and Linux.</p>
       <div class="hero-cta">
-        <a href="#download" class="btn btn-lg">Download Free</a>
+        <a href="#download" class="btn btn-lg" data-download>Download Free</a>
         <a href="#features" class="btn btn-lg btn-outline">Learn More</a>
       </div>
     </div>
@@ -220,26 +220,35 @@
       <img src="images/logo-icon.png" alt="Stuff Diver" class="download-logo">
       <h2 class="section-title">Download Stuff Diver</h2>
       <p class="section-sub">Free and open source. Available for macOS, Windows, and Linux.</p>
-      <div class="download-grid">
-        <a href="#" class="download-card">
-          <span class="dl-icon">&#63743;</span>
-          <span class="dl-platform">macOS</span>
-          <span class="dl-detail">Apple Silicon &amp; Intel</span>
-        </a>
-        <a href="#" class="download-card">
-          <span class="dl-icon">&#128187;</span>
-          <span class="dl-platform">Windows</span>
-          <span class="dl-detail">ARM64 &amp; x64</span>
-        </a>
-        <a href="#" class="download-card">
-          <span class="dl-icon">&#128039;</span>
-          <span class="dl-platform">Linux</span>
-          <span class="dl-detail">AppImage &amp; .deb</span>
-        </a>
+      <div class="hero-cta" style="margin-bottom:24px">
+        <a href="#download" class="btn btn-lg" data-download>Download Free</a>
       </div>
-      <p class="download-note">v0.4.2 &middot; Built with Electron &middot; <a href="https://github.com/cryptopoly/StuffDiver" class="link">View on GitHub</a></p>
+      <p class="download-note">Built with Electron &middot; <a href="https://github.com/cryptopoly/StuffDiver" class="link">View on GitHub</a></p>
     </div>
   </section>
+
+  <!-- SISTER SITES -->
+  <div class="sister-sites" data-show="true">
+    <div class="sister-label">Also from this stable</div>
+    <div class="sister-list">
+      <a href="https://chaosengineai.com" target="_blank" rel="noopener">
+        <div class="sister-thumb"><img src="othersites/ChaosEngineAI.png" alt="" loading="lazy"></div>
+        <div class="sister-name">ChaosEngine<span>AI.com</span></div>
+      </a>
+      <a href="https://terminallyskill.com" target="_blank" rel="noopener">
+        <div class="sister-thumb"><img src="othersites/TerminallySKILL.png" alt="" loading="lazy"></div>
+        <div class="sister-name">TerminallySKILL<span>.com</span></div>
+      </a>
+      <a href="https://satoshisnippets.com" target="_blank" rel="noopener">
+        <div class="sister-thumb"><img src="othersites/SatoshiSnippets.png" alt="" loading="lazy"></div>
+        <div class="sister-name">SatoshiSnippets<span>.com</span></div>
+      </a>
+      <a href="https://clawmanager.ai" target="_blank" rel="noopener">
+        <div class="sister-thumb"><img src="othersites/ClawManager.png" alt="" loading="lazy"></div>
+        <div class="sister-name">ClawManager<span>.AI</span></div>
+      </a>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -256,6 +265,7 @@
     </div>
   </footer>
 
+  <script src="download.js"></script>
   <script>
     // Mobile nav toggle
     document.querySelector('.nav-toggle').addEventListener('click', () => {
